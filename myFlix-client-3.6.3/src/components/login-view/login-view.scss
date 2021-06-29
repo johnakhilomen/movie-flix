@@ -1,0 +1,17 @@
+@use '../../index.scss';
+
+.form-label {
+  color: index.$white;
+}
+
+.register-link-label {
+  padding-top: 15px;
+}
+
+.register-label {
+  padding-top: 15px;
+}
+
+.login-view-button {
+  width: 80px;
+}
