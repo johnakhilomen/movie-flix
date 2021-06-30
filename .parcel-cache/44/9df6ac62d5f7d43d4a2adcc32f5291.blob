@@ -1,0 +1,209 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "UserView", function () {
+    return UserView;
+  });
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  require('axios');
+  require('../user-favorite-movies/user-favorite-movies');
+  var _reactBootstrap = require('react-bootstrap');
+  require('react-router-dom');
+  require('micromatch');
+  require('./user-view.scss');
+  var _jsxFileName = "/Users/johnakhilomen/Desktop/movie-flix/src/components/user-view/user-view.jsx";
+  class UserView extends _react.Component {
+    constructor() {
+      super();
+      this.state = {
+        user: null,
+        movies: [],
+        favMovies: [],
+        disableForm: "disabled",
+        name: "",
+        username: "",
+        birthdate: "",
+        email: ""
+      };
+      this.handleUserInput = this.handleUserInput.bind(this);
+    }
+    /*componentDidMount() {*/
+    /*let accessToken = localStorage.getItem('token');*/
+    /*if (accessToken !== null) {*/
+    /*this.setState({*/
+    /*user: JSON.parse(localStorage.getItem('user')),*/
+    /*});*/
+    /*this.getMovies(accessToken);*/
+    /*}*/
+    /*}*/
+    handleUserInput(evt) {
+      console.log({
+        [evt.target.name]: evt.target.value
+      });
+      this.setState({
+        [evt.target.name]: evt.target.value
+      });
+    }
+    enableForm() {
+      this.setState({
+        disableForm: ""
+      });
+    }
+    render() {
+      const {user, onBackClick, favMovies} = this.props;
+      console.log('user-render: ' + favMovies);
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Row, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 57,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Col, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 58,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Card.Body, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 59,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h2", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 60,
+            columnNumber: 13
+          }
+        }, "User Info:"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Card.Text, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 61,
+            columnNumber: 13
+          }
+        }, "Name:", /*#__PURE__*/_reactDefault.default.createElement("input", {
+          name: "name",
+          type: "text",
+          placeholder: user.Name,
+          value: this.state.name,
+          disabled: this.state.disableForm,
+          ref: "searchStringInput",
+          onChange: this.handleUserInput,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 62,
+            columnNumber: 15
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Card.Text, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 66,
+            columnNumber: 13
+          }
+        }, "Username: ", /*#__PURE__*/_reactDefault.default.createElement("input", {
+          name: "username",
+          type: "text",
+          value: this.state.username,
+          placeholder: user.Username,
+          disabled: this.state.disableForm,
+          onChange: this.handleUserInput,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 66,
+            columnNumber: 34
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Card.Text, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 67,
+            columnNumber: 13
+          }
+        }, "Email: ", /*#__PURE__*/_reactDefault.default.createElement("input", {
+          name: "email",
+          type: "text",
+          value: this.state.email,
+          placeholder: user.Email,
+          disabled: this.state.disableForm,
+          onChange: this.handleUserInput,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 67,
+            columnNumber: 31
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Card.Text, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 68,
+            columnNumber: 13
+          }
+        }, "Birthdate: ", /*#__PURE__*/_reactDefault.default.createElement("input", {
+          name: "birthdate",
+          type: "text",
+          value: this.state.birthdate,
+          placeholder: user.Birthdate,
+          disabled: this.state.disableForm,
+          onChange: this.handleUserInput,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 68,
+            columnNumber: 35
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Card.Text, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 69,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("button", {
+          type: "button",
+          onClick: () => this.enableForm(),
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 69,
+            columnNumber: 24
+          }
+        }, " Edit"), " "), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Card.Text, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 70,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("button", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 70,
+            columnNumber: 24
+          }
+        }, "Save"), " "))))
+      );
+    }
+  }
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

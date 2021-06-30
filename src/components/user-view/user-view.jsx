@@ -19,7 +19,10 @@ export class UserView extends Component {
       movies: [],
       favMovies: [],
       disableForm: "disabled",
-      name: "name"
+      name: "",
+      username: "",
+      birthdate: "",
+      email: ""
     };
     this.handleUserInput = this.handleUserInput.bind(this);
   }
@@ -35,9 +38,9 @@ export class UserView extends Component {
   // }
 
   handleUserInput(evt) {
-    console.log(evt.target)
+    console.log({[evt.target.name]: evt.target.value})
     this.setState({
-      name: evt.target.value
+      [evt.target.name]: evt.target.value
     })
   }
 
@@ -56,13 +59,13 @@ export class UserView extends Component {
           <Card.Body>
             <h2>User Info:</h2>
             <Card.Text>Name:  
-              <input id="name" type="text" value={this.state.name} disabled={this.state.disableForm}
+              <input name="name" type="text" placeholder={user.Name} value={this.state.name} disabled={this.state.disableForm}
               ref="searchStringInput"
               onChange={this.handleUserInput}></input>
            </Card.Text>
-            <Card.Text>Username: <input id="name" type="text" value={user.Username} disabled={this.state.disableForm}></input></Card.Text>
-            <Card.Text>Email: <input id="name" type="text" value={user.Email} disabled={this.state.disableForm}></input></Card.Text>
-            <Card.Text>Birthdate: <input id="name" type="text" value={user.Birthdate} disabled={this.state.disableForm}></input></Card.Text>
+            <Card.Text>Username: <input name="username" type="text" value={this.state.username} placeholder={user.Username} disabled={this.state.disableForm} onChange={this.handleUserInput}></input></Card.Text>
+            <Card.Text>Email: <input name="email" type="text" value={this.state.email} placeholder={user.Email} disabled={this.state.disableForm} onChange={this.handleUserInput}></input></Card.Text>
+            <Card.Text>Birthdate: <input name="birthdate" type="text" value={this.state.birthdate} placeholder={user.Birthdate} disabled={this.state.disableForm} onChange={this.handleUserInput}></input></Card.Text>
             <Card.Text><button type="button" onClick={()=>this.enableForm()}> Edit</button> </Card.Text>
             <Card.Text><button>Save</button> </Card.Text>
           </Card.Body>

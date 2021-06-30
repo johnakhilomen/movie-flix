@@ -1056,7 +1056,7 @@ try {
   var _reactBootstrapContainer = require('react-bootstrap/Container');
   var _reactBootstrapContainerDefault = _parcelHelpers.interopDefault(_reactBootstrapContainer);
   require('./index.scss');
-  var _jsxFileName = "/Users/johnakhilomen/Downloads/myFlix-client-3.6.3/src/index.jsx";
+  var _jsxFileName = "/Users/johnakhilomen/Desktop/movie-flix/src/index.jsx";
   // Main component (will eventually use all others)
   class MyFlixApplication extends _reactDefault.default.Component {
     render() {
@@ -1089,7 +1089,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","react-dom":"2sg1U","./components/main-view/main-view.jsx":"67PhB","react-bootstrap/Container":"3Mt3t","./index.scss":"43hA9","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"3b2NM":[function(require,module,exports) {
+},{"react":"3b2NM","react-dom":"2sg1U","./components/main-view/main-view.jsx":"67PhB","react-bootstrap/Container":"3Mt3t","./index.scss":"5iJih","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"3b2NM":[function(require,module,exports) {
 "use strict";
 if ("development" === 'production') {
   module.exports = require('./cjs/react.production.min.js');
@@ -26310,7 +26310,7 @@ try {
   var _reactBootstrapCol = require('react-bootstrap/Col');
   var _reactBootstrapColDefault = _parcelHelpers.interopDefault(_reactBootstrapCol);
   require('micromatch');
-  var _jsxFileName = "/Users/johnakhilomen/Downloads/myFlix-client-3.6.3/src/components/main-view/main-view.jsx";
+  var _jsxFileName = "/Users/johnakhilomen/Desktop/movie-flix/src/components/main-view/main-view.jsx";
   class MainView extends _reactDefault.default.Component {
     constructor() {
       super();
@@ -32444,7 +32444,7 @@ try {
   require('react-router-dom');
   require('micromatch');
   require('./user-view.scss');
-  var _jsxFileName = "/Users/johnakhilomen/Downloads/myFlix-client-3.6.3/src/components/user-view/user-view.jsx";
+  var _jsxFileName = "/Users/johnakhilomen/Desktop/movie-flix/src/components/user-view/user-view.jsx";
   class UserView extends _react.Component {
     constructor() {
       super();
@@ -32453,7 +32453,10 @@ try {
         movies: [],
         favMovies: [],
         disableForm: "disabled",
-        name: "name"
+        name: "",
+        username: "",
+        birthdate: "",
+        email: ""
       };
       this.handleUserInput = this.handleUserInput.bind(this);
     }
@@ -32467,9 +32470,11 @@ try {
     /*}*/
     /*}*/
     handleUserInput(evt) {
-      console.log(evt.target);
+      console.log({
+        [evt.target.name]: evt.target.value
+      });
       this.setState({
-        name: evt.target.value
+        [evt.target.name]: evt.target.value
       });
     }
     enableForm() {
@@ -32485,40 +32490,41 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 54,
+            lineNumber: 57,
             columnNumber: 7
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Col, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 55,
+            lineNumber: 58,
             columnNumber: 9
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Card.Body, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 56,
+            lineNumber: 59,
             columnNumber: 11
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("h2", {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 57,
+            lineNumber: 60,
             columnNumber: 13
           }
         }, "User Info:"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Card.Text, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 58,
+            lineNumber: 61,
             columnNumber: 13
           }
         }, "Name:", /*#__PURE__*/_reactDefault.default.createElement("input", {
-          id: "name",
+          name: "name",
           type: "text",
+          placeholder: user.Name,
           value: this.state.name,
           disabled: this.state.disableForm,
           ref: "searchStringInput",
@@ -32526,68 +32532,74 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 59,
+            lineNumber: 62,
             columnNumber: 15
           }
         })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Card.Text, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 63,
+            lineNumber: 66,
             columnNumber: 13
           }
         }, "Username: ", /*#__PURE__*/_reactDefault.default.createElement("input", {
-          id: "name",
+          name: "username",
           type: "text",
-          value: user.Username,
+          value: this.state.username,
+          placeholder: user.Username,
           disabled: this.state.disableForm,
+          onChange: this.handleUserInput,
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 63,
+            lineNumber: 66,
             columnNumber: 34
           }
         })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Card.Text, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 64,
+            lineNumber: 67,
             columnNumber: 13
           }
         }, "Email: ", /*#__PURE__*/_reactDefault.default.createElement("input", {
-          id: "name",
+          name: "email",
           type: "text",
-          value: user.Email,
+          value: this.state.email,
+          placeholder: user.Email,
           disabled: this.state.disableForm,
+          onChange: this.handleUserInput,
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 64,
+            lineNumber: 67,
             columnNumber: 31
           }
         })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Card.Text, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 65,
+            lineNumber: 68,
             columnNumber: 13
           }
         }, "Birthdate: ", /*#__PURE__*/_reactDefault.default.createElement("input", {
-          id: "name",
+          name: "birthdate",
           type: "text",
-          value: user.Birthdate,
+          value: this.state.birthdate,
+          placeholder: user.Birthdate,
           disabled: this.state.disableForm,
+          onChange: this.handleUserInput,
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 65,
+            lineNumber: 68,
             columnNumber: 35
           }
         })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Card.Text, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 66,
+            lineNumber: 69,
             columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("button", {
@@ -32596,21 +32608,21 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 66,
+            lineNumber: 69,
             columnNumber: 24
           }
         }, " Edit"), " "), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Card.Text, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 67,
+            lineNumber: 70,
             columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("button", {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 67,
+            lineNumber: 70,
             columnNumber: 24
           }
         }, "Save"), " "))))
@@ -32623,7 +32635,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","axios":"7rA65","../user-favorite-movies/user-favorite-movies":"6V0i7","react-bootstrap":"4n7hB","react-router-dom":"1PMSK","micromatch":"5nyEI","./user-view.scss":"6ducD","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"6V0i7":[function(require,module,exports) {
+},{"react":"3b2NM","axios":"7rA65","../user-favorite-movies/user-favorite-movies":"6V0i7","react-bootstrap":"4n7hB","react-router-dom":"1PMSK","micromatch":"5nyEI","./user-view.scss":"1MPtz","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"6V0i7":[function(require,module,exports) {
 var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -32639,7 +32651,7 @@ try {
   require('react-bootstrap');
   require('micromatch');
   require('./user-favorite-movies.scss');
-  var _jsxFileName = "/Users/johnakhilomen/Downloads/myFlix-client-3.6.3/src/components/user-favorite-movies/user-favorite-movies.jsx";
+  var _jsxFileName = "/Users/johnakhilomen/Desktop/movie-flix/src/components/user-favorite-movies/user-favorite-movies.jsx";
   class UserFavoriteMovies extends _reactDefault.default.Component {
     render() {
       const {favMovies} = this.props;
@@ -32661,7 +32673,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","react-bootstrap":"4n7hB","micromatch":"5nyEI","./user-favorite-movies.scss":"7pVti","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"4n7hB":[function(require,module,exports) {
+},{"react":"3b2NM","react-bootstrap":"4n7hB","micromatch":"5nyEI","./user-favorite-movies.scss":"6D49F","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"4n7hB":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -52552,7 +52564,7 @@ parse.fastpaths = (input, options) => {
 
 module.exports = parse;
 
-},{"./constants":"1LSJm","./utils":"2hE0D"}],"7pVti":[function() {},{}],"5gA8y":[function(require,module,exports) {
+},{"./constants":"1LSJm","./utils":"2hE0D"}],"6D49F":[function() {},{}],"5gA8y":[function(require,module,exports) {
 "use strict";
 
 exports.interopDefault = function (a) {
@@ -52751,7 +52763,7 @@ function registerExportsForReactRefresh(module) {
   }
 }
 
-},{"react-refresh/runtime":"592mh"}],"6ducD":[function() {},{}],"7HF27":[function(require,module,exports) {
+},{"react-refresh/runtime":"592mh"}],"1MPtz":[function() {},{}],"7HF27":[function(require,module,exports) {
 var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -52767,7 +52779,7 @@ try {
   var _reactBootstrap = require('react-bootstrap');
   require('react-router-dom');
   require('./director-view.scss');
-  var _jsxFileName = "/Users/johnakhilomen/Downloads/myFlix-client-3.6.3/src/components/director-view/director-view.jsx";
+  var _jsxFileName = "/Users/johnakhilomen/Desktop/movie-flix/src/components/director-view/director-view.jsx";
   class DirectorView extends _reactDefault.default.Component {
     render() {
       const {director, onBackClick} = this.props;
@@ -52837,7 +52849,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","react-bootstrap":"4n7hB","react-router-dom":"1PMSK","./director-view.scss":"3B2G5","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"3B2G5":[function() {},{}],"6FLqj":[function(require,module,exports) {
+},{"react":"3b2NM","react-bootstrap":"4n7hB","react-router-dom":"1PMSK","./director-view.scss":"4ddkX","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"4ddkX":[function() {},{}],"6FLqj":[function(require,module,exports) {
 var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -52853,7 +52865,7 @@ try {
   var _reactBootstrap = require('react-bootstrap');
   require('react-router-dom');
   require('./genre-view.scss');
-  var _jsxFileName = "/Users/johnakhilomen/Downloads/myFlix-client-3.6.3/src/components/genre-view/genre-view.jsx";
+  var _jsxFileName = "/Users/johnakhilomen/Desktop/movie-flix/src/components/genre-view/genre-view.jsx";
   class GenreView extends _reactDefault.default.Component {
     render() {
       const {genre, onBackClick} = this.props;
@@ -52923,7 +52935,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","react-bootstrap":"4n7hB","react-router-dom":"1PMSK","./genre-view.scss":"52Z7F","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"52Z7F":[function() {},{}],"7gvH2":[function(require,module,exports) {
+},{"react":"3b2NM","react-bootstrap":"4n7hB","react-router-dom":"1PMSK","./genre-view.scss":"4iHPp","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"4iHPp":[function() {},{}],"7gvH2":[function(require,module,exports) {
 var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -52945,7 +52957,7 @@ try {
   var _axios = require('axios');
   var _axiosDefault = _parcelHelpers.interopDefault(_axios);
   require('./registration-view.scss');
-  var _jsxFileName = "/Users/johnakhilomen/Downloads/myFlix-client-3.6.3/src/components/registration-view/registration-view.jsx", _s = $RefreshSig$();
+  var _jsxFileName = "/Users/johnakhilomen/Desktop/movie-flix/src/components/registration-view/registration-view.jsx", _s = $RefreshSig$();
   function RegistrationView(props) {
     _s();
     const [name, setName] = _react.useState('');
@@ -53128,7 +53140,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","axios":"7rA65","./registration-view.scss":"6i5QP","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"6i5QP":[function() {},{}],"6M7fu":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","axios":"7rA65","./registration-view.scss":"22HWg","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"22HWg":[function() {},{}],"6M7fu":[function(require,module,exports) {
 var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -53146,7 +53158,7 @@ try {
   var _reactBootstrap = require('react-bootstrap');
   var _reactRouterDom = require('react-router-dom');
   require('./login-view.scss');
-  var _jsxFileName = "/Users/johnakhilomen/Downloads/myFlix-client-3.6.3/src/components/login-view/login-view.jsx", _s = $RefreshSig$();
+  var _jsxFileName = "/Users/johnakhilomen/Desktop/movie-flix/src/components/login-view/login-view.jsx", _s = $RefreshSig$();
   function LoginView(props) {
     _s();
     const [username, setUsername] = _react.useState('');
@@ -53289,7 +53301,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","axios":"7rA65","react-bootstrap":"4n7hB","react-router-dom":"1PMSK","./login-view.scss":"7jVKo","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"7jVKo":[function() {},{}],"7v6h3":[function(require,module,exports) {
+},{"react":"3b2NM","axios":"7rA65","react-bootstrap":"4n7hB","react-router-dom":"1PMSK","./login-view.scss":"3ueKO","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"3ueKO":[function() {},{}],"7v6h3":[function(require,module,exports) {
 var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -53310,7 +53322,7 @@ try {
   var _reactBootstrapCardDefault = _parcelHelpers.interopDefault(_reactBootstrapCard);
   require('./movie-card.scss');
   var _reactRouterDom = require('react-router-dom');
-  var _jsxFileName = "/Users/johnakhilomen/Downloads/myFlix-client-3.6.3/src/components/movie-card/movie-card.jsx";
+  var _jsxFileName = "/Users/johnakhilomen/Desktop/movie-flix/src/components/movie-card/movie-card.jsx";
   class MovieCard extends _reactDefault.default.Component {
     render() {
       const {movie} = this.props;
@@ -53392,7 +53404,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","./movie-card.scss":"5QZRz","react-router-dom":"1PMSK","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"5QZRz":[function() {},{}],"3xBbr":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","./movie-card.scss":"43n4t","react-router-dom":"1PMSK","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"43n4t":[function() {},{}],"3xBbr":[function(require,module,exports) {
 var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -53412,7 +53424,7 @@ try {
   var _reactBootstrap = require('react-bootstrap');
   var _reactRouterDom = require('react-router-dom');
   require('./movie-view.scss');
-  var _jsxFileName = "/Users/johnakhilomen/Downloads/myFlix-client-3.6.3/src/components/movie-view/movie-view.jsx";
+  var _jsxFileName = "/Users/johnakhilomen/Desktop/movie-flix/src/components/movie-view/movie-view.jsx";
   class MovieView extends _reactDefault.default.Component {
     render() {
       const {movie, onBackClick} = this.props;
@@ -53552,6 +53564,6 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","react-bootstrap/Card":"1CZWQ","react-bootstrap/Button":"1ru0l","react-bootstrap":"4n7hB","react-router-dom":"1PMSK","./movie-view.scss":"7HQqO","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"7HQqO":[function() {},{}],"43hA9":[function() {},{}]},["1j6wU","68WUB","1DVjT"], "1DVjT", "parcelRequire279c")
+},{"react":"3b2NM","react-bootstrap/Card":"1CZWQ","react-bootstrap/Button":"1ru0l","react-bootstrap":"4n7hB","react-router-dom":"1PMSK","./movie-view.scss":"4iZ2Z","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"4iZ2Z":[function() {},{}],"5iJih":[function() {},{}]},["1j6wU","68WUB","1DVjT"], "1DVjT", "parcelRequire279c")
 
 //# sourceMappingURL=index.02675e63.js.map

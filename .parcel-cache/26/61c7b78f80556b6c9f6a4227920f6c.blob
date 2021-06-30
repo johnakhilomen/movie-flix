@@ -1,0 +1,36 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "UserFavoriteMovies", function () {
+    return UserFavoriteMovies;
+  });
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  require('react-bootstrap');
+  require('micromatch');
+  require('./user-favorite-movies.scss');
+  var _jsxFileName = "/Users/johnakhilomen/Desktop/movie-flix/src/components/user-favorite-movies/user-favorite-movies.jsx";
+  class UserFavoriteMovies extends _reactDefault.default.Component {
+    render() {
+      const {favMovies} = this.props;
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 12,
+            columnNumber: 12
+          }
+        }, "hello")
+      );
+    }
+  }
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

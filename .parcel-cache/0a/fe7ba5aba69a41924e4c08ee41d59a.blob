@@ -1,0 +1,16 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat&family=Staatliches&display=swap);
+* {
+  font-family: "montserrat";
+}
+
+h4 {
+  font-family: "staatliches";
+}
+
+.app-container {
+  background-color: #1e392a95;
+}
+
+.component-container {
+  height: 100vh;
+}
