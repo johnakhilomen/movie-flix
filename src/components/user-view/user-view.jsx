@@ -18,8 +18,10 @@ export class UserView extends Component {
       user: null,
       movies: [],
       favMovies: [],
-      disableForm: "disabled"
+      disableForm: "disabled",
+      name: "name"
     };
+    this.handleUserInput = this.handleUserInput.bind(this);
   }
 
   // componentDidMount() {
@@ -31,6 +33,13 @@ export class UserView extends Component {
   //     this.getMovies(accessToken);
   //   }
   // }
+
+  handleUserInput(evt) {
+    console.log(evt.target)
+    this.setState({
+      name: evt.target.value
+    })
+  }
 
   enableForm()
   {
@@ -46,7 +55,10 @@ export class UserView extends Component {
         <Col>
           <Card.Body>
             <h2>User Info:</h2>
-            <Card.Text>Name:  <input id="name" type="text" value={user.Name} disabled={this.state.disableForm}></input>
+            <Card.Text>Name:  
+              <input id="name" type="text" value={this.state.name} disabled={this.state.disableForm}
+              ref="searchStringInput"
+              onChange={this.handleUserInput}></input>
            </Card.Text>
             <Card.Text>Username: <input id="name" type="text" value={user.Username} disabled={this.state.disableForm}></input></Card.Text>
             <Card.Text>Email: <input id="name" type="text" value={user.Email} disabled={this.state.disableForm}></input></Card.Text>
