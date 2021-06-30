@@ -38,8 +38,7 @@ export class UserView extends Component {
   // }
 
   handleUserInput(evt) {
-    console.log({[evt.target.name]: evt.target.value})
-    this.setState({
+  this.setState({
       [evt.target.name]: evt.target.value
     })
   }
